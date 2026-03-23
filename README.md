@@ -187,27 +187,40 @@ button {
 ## 🛍️ 7. Products Page (`products.php`)
 
 ```php
-<?php include 'header.php'; ?>
-<?php include 'config.php'; ?>
+<?php 
+session_start();
+include 'header.php'; 
+include 'config.php'; 
+?>
 
 <div class="container">
     <h2>Products</h2>
 
+    <!-- SEARCH -->
+    <form method="GET">
+        <input type="text" name="search" placeholder="Search products...">
+        <button type="submit">Search</button>
+    </form>
+
     <div class="grid">
         <?php
-        $result = $conn->query("SELECT * FROM products");
+        $search = "";
+        if (isset($_GET['search'])) {
+            $search = $_GET['search'];
+            $sql = "SELECT * FROM products WHERE name LIKE '%$search%'";
+        } else {
+            $sql = "SELECT * FROM products";
+        }
+
+        $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()) {
             echo "<div class='box'>";
-            echo $row['name'] . "<br>£" . $row['price'];
-            echo "<br><button>Add to basket</button>";
-            echo "</div>";
-        }
-        ?>
-    </div>
-</div>
+            echo "<b>" . $row['name'] . "</b><br>";
+            echo "£" . $row['price'] . "<br>";
 
-<?php include 'footer.php'; ?>
+            echo "<form method='POST'>";
+            echo "<input type='hidden
 ```
 
 ---
