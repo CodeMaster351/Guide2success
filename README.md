@@ -106,6 +106,7 @@ body {
     padding: 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links a {
@@ -114,11 +115,25 @@ body {
     text-decoration: none;
 }
 
-/* MAIN BOXES */
+/* CONTAINER */
 .container {
     padding: 20px;
 }
 
+/* HERO SECTION */
+.hero {
+    background-color: #2d5fff;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    margin-top: 10px;
+}
+
+/* BOXES */
 .box {
     background-color: #2d5fff;
     color: white;
@@ -132,6 +147,13 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+}
+
+/* INFO SECTIONS */
+.info-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 /* FORM */
@@ -155,6 +177,7 @@ button {
     background: grey;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 /* FOOTER */
@@ -175,8 +198,43 @@ button {
 <?php include 'header.php'; ?>
 
 <div class="container">
-    <h1>Welcome to Greenfield Local Hub</h1>
-    <p>Buy fresh local produce</p>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Welcome to Greenfield Local Hub</h1>
+        <p>Supporting local farmers and fresh produce</p>
+        <a href="products.php"><button>Browse Products</button></a>
+    </div>
+
+    <!-- FEATURED PRODUCTS -->
+    <h2>Featured Products</h2>
+    <div class="grid">
+        <div class="box">Organic Apples - £2.50</div>
+        <div class="box">Fresh Milk - £1.80</div>
+        <div class="box">Local Honey - £4.00</div>
+        <div class="box">Free-range Eggs - £3.00</div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="info-section">
+        <h2>About Greenfield</h2>
+        <p>
+            Greenfield Local Hub connects customers with local farmers and producers.
+            Our goal is to support the local economy and provide fresh, high-quality produce.
+        </p>
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="info-section">
+        <h2>Why Buy Local?</h2>
+        <ul>
+            <li>Fresher and higher quality food</li>
+            <li>Supports local farmers</li>
+            <li>Reduces environmental impact</li>
+            <li>Promotes sustainability</li>
+        </ul>
+    </div>
+
 </div>
 
 <?php include 'footer.php'; ?>
