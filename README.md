@@ -420,3 +420,134 @@ http://localhost/your-folder-name
 * Simple UI with CSS grid layout
 
 ---
+
+
+
+🌿 Greenfield Local Hub – Web Prototype
+📌 Overview
+This project is a web-based prototype developed for Greenfield Local Hub.
+It allows users to:
+Browse products
+Register and log in
+View a dashboard with key business data
+The system displays:
+Stock levels
+Sales trends
+Orders awaiting delivery
+🛠 Technologies Used
+HTML – Structure
+CSS – Styling and layout
+PHP – Backend processing
+MySQL (XAMPP) – Database for users and products
+This meets the requirement of using both front-end and back-end technologies.
+🔁 Iterative Development
+Iteration 1
+Created basic homepage using HTML and CSS
+Added navigation bar and footer
+Static layout (no interactivity)
+Iteration 2
+Developed login and registration pages
+Added PHP for handling user input
+Implemented basic validation (required fields)
+Iteration 3
+Built product page with grid layout
+Added dropdown filter for product selection
+Improved page navigation
+Iteration 4
+Created dashboard displaying:
+Items in stock
+Items out of stock
+Sales trends
+Orders awaiting delivery
+Improved styling consistency
+Final Iteration
+Enhanced UI (spacing, colours, layout)
+Added better error handling
+Improved navigation and usability
+Standardised structure across all pages
+🧪 Testing
+Testing followed the strategy defined in Task 1 and included:
+Functional testing
+Validation testing
+Usability testing
+Sample Test Log
+Test ID	Component	Test Data	Expected Result	Actual Result	Result
+T1	Login	Valid email + password	User logs in	Successful login	✅
+T2	Login	Invalid password	Error message displayed	Error shown	✅
+T3	Register	Empty fields	Submission prevented	Prevented	✅
+T4	Product Page	Select filter	Products update	Works correctly	✅
+T5	Navigation	Click links	Correct page loads	Works	✅
+Testing was iterative, with improvements made after each round.
+📚 Assets Log
+Source	Content Used	Purpose	Date Accessed
+W3Schools	HTML, CSS, PHP tutorials	Coding support	10/03/2026
+MDN Web Docs	Development guidance	Best practices	11/03/2026
+Google Fonts	Typography	Improve visual design	12/03/2026
+Own Designs	Wireframes	Page structure planning	13/03/2026
+🔐 Security Considerations
+Input validation prevents invalid or empty data
+Required fields enforced in forms
+Password fields are hidden
+PHP processes data securely on the server
+Potential for session management to control access
+These measures help protect user data and improve reliability.
+🧩 Maintainability
+The system is designed for easy maintenance:
+Code separated into HTML, CSS, and PHP files
+Clear file naming (e.g. login.php, register.php)
+Consistent navigation and footer across pages
+Reusable components reduce duplication
+Code is simple and readable
+🎯 User Experience (UX)
+Consistent layout across all pages
+Clear navigation bar
+Simple and readable forms
+Dashboard presents data clearly
+Buttons and links are easy to identify
+⚖️ Legal & Regulatory Considerations
+GDPR awareness: only necessary data is collected
+Privacy policy and terms included
+Accessible layout and readable text
+No unnecessary personal data stored
+🚀 Future Improvements
+📊 Dashboard Enhancements
+Hover effects on cards
+Animated counters
+Colour indicators:
+Green = good
+Red = low stock
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+🛒 Product Page Improvements
+Add search bar
+“Add to basket” functionality
+Product hover effects
+<input type="text" placeholder="Search products...">
+<button>Add to Basket</button>
+🏠 Homepage Expansion
+Add scrolling sections:
+Featured Products
+About Greenfield
+Customer Reviews
+🔑 Login/Register Enhancements
+Error messages (e.g. password too short)
+Confirm password field
+📎 Footer Upgrade
+Social icons
+Additional links:
+FAQ
+Contact
+Support
+🧭 Navigation Bar Improvements
+Highlight active page
+.nav a:hover {
+  color: yellow;
+}
+⚡ JavaScript Features (Optional)
+Login failure alerts
+Dynamic basket count
