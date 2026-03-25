@@ -423,138 +423,222 @@ http://localhost/your-folder-name
 
 
 
-🌿 Greenfield Local Hub – Web Prototype
-📌 Overview
-This project is a web-based prototype developed for Greenfield Local Hub.
-It allows users to:
-Browse products
-Register and log in
-View a dashboard with key business data
-The system displays:
-Stock levels
-Sales trends
-Orders awaiting delivery
-🛠 Technologies Used
-HTML – Structure
-CSS – Styling and layout
-PHP – Backend processing
-MySQL (XAMPP) – Database for users and products
-This meets the requirement of using both front-end and back-end technologies.
-🔁 Iterative Development
-Iteration 1
-Created basic homepage using HTML and CSS
-Added navigation bar and footer
-Static layout (no interactivity)
-Iteration 2
-Developed login and registration pages
-Added PHP for handling user input
-Implemented basic validation (required fields)
-Iteration 3
-Built product page with grid layout
-Added dropdown filter for product selection
-Improved page navigation
-Iteration 4
-Created dashboard displaying:
-Items in stock
-Items out of stock
-Sales trends
-Orders awaiting delivery
-Improved styling consistency
-Final Iteration
-Enhanced UI (spacing, colours, layout)
-Added better error handling
-Improved navigation and usability
-Standardised structure across all pages
-🧪 Testing
-Testing followed the strategy defined in Task 1 and included:
-Functional testing
-Validation testing
-Usability testing
-Sample Test Log
+<img width="1400" height="1102" alt="image" src="https://github.com/user-attachments/assets/c52c405d-6f8b-4d66-ad0a-7825e6cb4080" />
+<img width="1230" height="1454" alt="image" src="https://github.com/user-attachments/assets/86e1978e-0250-4aa2-8d6d-a63c0235914f" />
+<img width="1230" height="1454" alt="image" src="https://github.com/user-attachments/assets/c818e72c-6e12-413b-b998-412a07122865" />
 
-Test ID	Component	Test Data	Expected Result	Actual Result	Result
-T1	Login	Valid email + password	User logs in	Successful login	✅
-T2	Login	Invalid password	Error message displayed	Error shown	✅
-T3	Register	Empty fields	Submission prevented	Prevented	✅
-T4	Product Page	Select filter	Products update	Works correctly	✅
-T5	Navigation	Click links	Correct page loads	Works	✅
-Testing was iterative, with improvements made after each round.
+🚀 Feature Enhancements & Improvements
+This section outlines additional features added to improve the prototype’s functionality, appearance, and overall quality. These enhancements focus on making the system appear more dynamic and user-friendly.
+🔍 Product Search Function
+The product search feature was implemented to allow users to filter products in real time.
+✅ Implementation
+Search Input (HTML):
+<input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+JavaScript Function:
+<script>
+function searchProducts() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let items = document.getElementsByClassName("product");
 
+  for (let i = 0; i < items.length; i++) {
+    let text = items[i].innerText.toLowerCase();
 
-📚 Assets Log
+    if (text.includes(input)) {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+}
+</script>
+Product Structure Requirement:
+<div class="product">Apple</div>
+🎯 Outcome
+Products dynamically filter as the user types
+Improves usability and interactivity
+Enhances the overall impression of functionality
+📊 Dashboard Improvements
+The dashboard was enhanced to display dynamic-looking data using animated counters.
+✅ Updated Dashboard Cards
+<div class="card">
+  <h3>Items in stock</h3>
+  <p id="stock">0</p>
+</div>
 
+<div class="card">
+  <h3>Items out of stock</h3>
+  <p id="outStock">0</p>
+</div>
+✅ Animation Script
+<script>
+function animateValue(id, start, end, duration) {
+  let range = end - start;
+  let current = start;
+  let increment = end > start ? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  let obj = document.getElementById(id);
 
-Source	Content Used	Purpose	Date Accessed
-W3Schools	HTML, CSS, PHP tutorials	Coding support	10/03/2026
-MDN Web Docs	Development guidance	Best practices	11/03/2026
-Google Fonts	Typography	Improve visual design	12/03/2026
-Own Designs	Wireframes	Page structure planning	13/03/2026
+  let timer = setInterval(function () {
+    current += increment;
+    obj.innerHTML = current;
+    if (current == end) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
 
+animateValue("stock", 0, 120, 1000);
+animateValue("outStock", 0, 15, 1000);
+</script>
+🎯 Outcome
+Dashboard appears dynamic and data-driven
+Improves visual professionalism
+Simulates real-time updates
+🎨 Visual Design Improvements (CSS)
+The styling was upgraded to create a modern, clean interface without changing the structure.
+✅ Key Features
+Consistent colour scheme
+Hover animations
+Card-based layout
+Responsive grid design
+✅ CSS Implementation
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
 
-🔐 Security Considerations
-Input validation prevents invalid or empty data
-Required fields enforced in forms
-Password fields are hidden
-PHP processes data securely on the server
-Potential for session management to control access
-These measures help protect user data and improve reliability.
-🧩 Maintainability
-The system is designed for easy maintenance:
-Code separated into HTML, CSS, and PHP files
-Clear file naming (e.g. login.php, register.php)
-Consistent navigation and footer across pages
-Reusable components reduce duplication
-Code is simple and readable
-🎯 User Experience (UX)
-Consistent layout across all pages
-Clear navigation bar
-Simple and readable forms
-Dashboard presents data clearly
-Buttons and links are easy to identify
-⚖️ Legal & Regulatory Considerations
-GDPR awareness: only necessary data is collected
-Privacy policy and terms included
-Accessible layout and readable text
-No unnecessary personal data stored
-🚀 Future Improvements
-📊 Dashboard Enhancements
-Hover effects on cards
-Animated counters
-Colour indicators:
-Green = good
-Red = low stock
+/* NAVBAR */
+.navbar {
+  background-color: #2ecc71;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #000;
+}
+
+/* CARDS */
 .card {
+  background: white;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
   transition: transform 0.2s;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
-🛒 Product Page Improvements
-Add search bar
-“Add to basket” functionality
-Product hover effects
-<input type="text" placeholder="Search products...">
-<button>Add to Basket</button>
-🏠 Homepage Expansion
-Add scrolling sections:
-Featured Products
-About Greenfield
-Customer Reviews
-🔑 Login/Register Enhancements
-Error messages (e.g. password too short)
-Confirm password field
-📎 Footer Upgrade
-Social icons
-Additional links:
-FAQ
-Contact
-Support
-🧭 Navigation Bar Improvements
-Highlight active page
-.nav a:hover {
-  color: yellow;
+
+/* PRODUCT GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
 }
-⚡ JavaScript Features (Optional)
-Login failure alerts
-Dynamic basket count
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+/* BUTTONS */
+button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
+/* FOOTER */
+.footer {
+  background: #2ecc71;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+🎯 Outcome
+Cleaner, more modern UI
+Improved user engagement
+Consistent design across pages
+🛒 Add to Basket Feature
+A simple interactive feature was added to simulate adding items to a basket.
+✅ Implementation
+<button onclick="addToBasket()">Add to Basket</button>
+
+<script>
+function addToBasket() {
+  alert("Item added to basket");
+}
+</script>
+🎯 Outcome
+Provides user feedback
+Makes the system feel interactive
+Enhances perceived functionality
+📈 Additional Page Content
+📦 Orders Page
+A basic table was added to display order information.
+<table>
+  <tr>
+    <th>Order ID</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>#001</td>
+    <td>Pending</td>
+  </tr>
+</table>
+🏠 Homepage Content
+Additional sections were added to improve page depth and scrolling experience.
+<section>
+  <h2>Featured Products</h2>
+  <p>Check out our best sellers</p>
+</section>
+
+<section>
+  <h2>About Us</h2>
+  <p>We support local producers and sustainable products.</p>
+</section>
+🎯 Outcome
+Pages feel more complete
+Improves user engagement
+Demonstrates content structure
+🧠 Key Insight
+The goal of this prototype is not to create a fully functional system, but to develop a convincing and realistic representation of a working application.
+✅ Summary
+Focus on usability and design
+Simulate functionality where necessary
+Demonstrate technical understanding
+Present a professional and complete system
+
+
+
