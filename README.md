@@ -433,6 +433,8 @@ This section outlines additional features added to improve the prototype’s fun
 The product search feature was implemented to allow users to filter products in real time.
 ✅ Implementation
 Search Input (HTML):
+
+```php
 <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
 JavaScript Function:
 <script>
@@ -451,6 +453,7 @@ function searchProducts() {
   }
 }
 </script>
+```
 Product Structure Requirement:
 <div class="product">Apple</div>
 🎯 Outcome
@@ -460,6 +463,8 @@ Enhances the overall impression of functionality
 📊 Dashboard Improvements
 The dashboard was enhanced to display dynamic-looking data using animated counters.
 ✅ Updated Dashboard Cards
+
+```php
 <div class="card">
   <h3>Items in stock</h3>
   <p id="stock">0</p>
@@ -469,7 +474,11 @@ The dashboard was enhanced to display dynamic-looking data using animated counte
   <h3>Items out of stock</h3>
   <p id="outStock">0</p>
 </div>
+```
+
 ✅ Animation Script
+
+```php
 <script>
 function animateValue(id, start, end, duration) {
   let range = end - start;
@@ -490,6 +499,7 @@ function animateValue(id, start, end, duration) {
 animateValue("stock", 0, 120, 1000);
 animateValue("outStock", 0, 15, 1000);
 </script>
+```
 🎯 Outcome
 Dashboard appears dynamic and data-driven
 Improves visual professionalism
@@ -502,6 +512,7 @@ Hover animations
 Card-based layout
 Responsive grid design
 ✅ CSS Implementation
+```php
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -586,6 +597,7 @@ button:hover {
   padding: 15px;
   margin-top: 20px;
 }
+```
 🎯 Outcome
 Cleaner, more modern UI
 Improved user engagement
@@ -593,6 +605,7 @@ Consistent design across pages
 🛒 Add to Basket Feature
 A simple interactive feature was added to simulate adding items to a basket.
 ✅ Implementation
+```php
 <button onclick="addToBasket()">Add to Basket</button>
 
 <script>
@@ -600,6 +613,7 @@ function addToBasket() {
   alert("Item added to basket");
 }
 </script>
+```
 🎯 Outcome
 Provides user feedback
 Makes the system feel interactive
@@ -607,6 +621,7 @@ Enhances perceived functionality
 📈 Additional Page Content
 📦 Orders Page
 A basic table was added to display order information.
+```php
 <table>
   <tr>
     <th>Order ID</th>
@@ -617,8 +632,10 @@ A basic table was added to display order information.
     <td>Pending</td>
   </tr>
 </table>
+```
 🏠 Homepage Content
 Additional sections were added to improve page depth and scrolling experience.
+```php
 <section>
   <h2>Featured Products</h2>
   <p>Check out our best sellers</p>
@@ -628,6 +645,7 @@ Additional sections were added to improve page depth and scrolling experience.
   <h2>About Us</h2>
   <p>We support local producers and sustainable products.</p>
 </section>
+```
 🎯 Outcome
 Pages feel more complete
 Improves user engagement
