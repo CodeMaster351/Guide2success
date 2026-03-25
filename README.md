@@ -660,3 +660,141 @@ Present a professional and complete system
 
 
 
+
+
+🎨 1. Adding Images (SUPER IMPORTANT FOR VISUAL MARKS)
+Right now your UI is very “blocky” — adding images makes it look like a real product.
+✅ EASY ways to add images:
+🔹 A. Add a banner image (BEST for homepage)
+```php
+<img src="images/banner.jpg" class="banner">
+.banner {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+```
+👉 Put this under your navbar
+🔹 B. Add product images (VERY HIGH IMPACT)
+Instead of:
+```php
+<div class="product">Apple</div>
+Do this:
+```
+```php
+<div class="product">
+  <img src="images/apple.jpg">
+  <p>Apple</p>
+  <button>Add to Basket</button>
+</div>
+.product img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+```
+👉 This alone makes your site look 10x better
+🔹 C. Add image to register/login page (like modern sites)
+Split screen layout:
+```php
+<div class="form-container">
+  <div class="form-box">
+    <!-- your form -->
+  </div>
+
+  <div class="image-box">
+    <img src="images/farm.jpg">
+  </div>
+</div>
+.form-container {
+  display: flex;
+}
+
+.form-box {
+  width: 50%;
+}
+
+.image-box {
+  width: 50%;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+```
+👉 This gives you that professional website look
+📦 Where to get images (for your appendix too)
+Use:
+Unsplash (free)
+Pexels (free)
+👉 Download → put in images folder → reference like:
+images/apple.jpg
+🧱 2. FIX INPUT BOXES (IMPORTANT)
+Your issue:
+👉 Inputs stretch too far / touch edges ❌
+✅ FIX (ADD THIS CSS)
+```php
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box; /* 🔥 THIS FIXES IT */
+}
+```
+💡 WHY THIS WORKS
+Without:
+width = 100% + padding = overflow ❌
+With:
+box-sizing: border-box = includes padding inside width ✅
+🎯 3. MAKE YOUR REGISTER PAGE LOOK MUCH BETTER
+Right now it’s flat — let’s upgrade it slightly:
+✅ Add this CSS
+```php
+.form-box {
+  background: linear-gradient(135deg, #3a6ff7, #2ecc71);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form-box h1 {
+  margin-bottom: 20px;
+}
+
+.form-box button {
+  width: 100%;
+}
+```
+✨ 4. SMALL TOUCHES THAT BOOST MARKS
+These are tiny but examiners LOVE them:
+🔹 Placeholder colour fix
+input::placeholder {
+  color: #999;
+}
+🔹 Button hover animation
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+🔹 Add icons (optional but 🔥)
+<input type="text" placeholder="👤 First Name">
+🧠 FINAL RESULT
+After these changes:
+👉 Your site goes from
+“basic student prototype”
+➡️ to
+“realistic professional prototype”
+
+
+
