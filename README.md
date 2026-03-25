@@ -471,6 +471,7 @@ Functional testing
 Validation testing
 Usability testing
 Sample Test Log
+
 Test ID	Component	Test Data	Expected Result	Actual Result	Result
 T1	Login	Valid email + password	User logs in	Successful login	✅
 T2	Login	Invalid password	Error message displayed	Error shown	✅
@@ -478,12 +479,18 @@ T3	Register	Empty fields	Submission prevented	Prevented	✅
 T4	Product Page	Select filter	Products update	Works correctly	✅
 T5	Navigation	Click links	Correct page loads	Works	✅
 Testing was iterative, with improvements made after each round.
+
+
 📚 Assets Log
+
+
 Source	Content Used	Purpose	Date Accessed
 W3Schools	HTML, CSS, PHP tutorials	Coding support	10/03/2026
 MDN Web Docs	Development guidance	Best practices	11/03/2026
 Google Fonts	Typography	Improve visual design	12/03/2026
 Own Designs	Wireframes	Page structure planning	13/03/2026
+
+
 🔐 Security Considerations
 Input validation prevents invalid or empty data
 Required fields enforced in forms
